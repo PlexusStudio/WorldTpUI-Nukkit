@@ -1,6 +1,5 @@
 package Zero.WorldTpUI;
 
-import Zero.WorldTpUI.commands.wtpui;
 import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.utils.TextFormat;
 
@@ -12,7 +11,7 @@ public class Main extends PluginBase{
   public void onEnable(){
     instance = this;
     getServer().getPluginManager().registerEvents(new Zero.WorldTpUI.events.FormEvent(this), this);
-    getServer().getCommandMap().register("wtpui", new wtpui(this, "wtpui"));
+    getServer().getCommandMap().register("wtpui", new Zero.WorldTpUI.commands.wtpui(this, "wtpui"));
     info(TextFormat.GREEN +"Is now Enabled!");
   }
 
