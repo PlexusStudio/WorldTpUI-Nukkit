@@ -30,8 +30,13 @@ public class FormEvent implements Listener {
             String title = ((FormWindowSimple) event.getWindow()).getTitle();
             String button = ((FormResponseSimple) event.getResponse()).getClickedButton().getText();
             if (!event.wasClosed()) {
-                if(title == "World Teleport UI"){
-			
+                if(title == "World Teleport UI"){				
+			Level level = getPlugin().getServer().getLevelByName(button);
+			if(getPlugin().getServer().isLevelLoaded(level.getFolderName())){
+				player.teleport(level.getSafeSpawn());			
+			} else {
+				player.sendMessage(TextFormat.RED +"The world you are trying to teleport to is not loaded");
+			}
 		}
 	    }
 	}
