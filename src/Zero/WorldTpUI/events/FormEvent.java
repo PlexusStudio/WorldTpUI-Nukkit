@@ -21,24 +21,19 @@ public class FormEvent implements Listener {
 	return plugin;
   }
   
-  @EventHandler
-  public void FormFormResponse(cn.nukkit.event.player.PlayerFormRespondedEvent event){
-    final Player player = event.getPlayer();
-    final FormWindow window = event.getWindow();
-  if(event.getResponse() != null){
-  if(window instanceof FormWindowSimple){
-    final String button = ((FormWindowSimple) event.getWindow()).getResponse().getClickedButton().getText();
-  if(button != null && !window.wasClosed() && button != "Cancel"){
-	Level level = getPlugin().getServer().getLevelByName(button);
-  if(getPlugin().getServer().isLevelLoaded(level.getFolderName())){
-	player.teleport(level.getSafeSpawn());
-  } else {
-	player.sendMessage(TextFormat.RED +"The world you are trying to teleport to is not loaded");
-   }
-  } else {
-    window.wasClosed();
-     }
+    @EventHandler
+    public void formRespond(cn.nukkit.event.player.PlayerFormRespondedEvent event) {
+        Player player = event.getPlayer();
+        FormWindow window = event.getWindow();
+        if (event.getResponse() == null) return;
+        if (window instanceof FormWindowSimple) {
+            String title = ((FormWindowSimple) event.getWindow()).getTitle();
+            String button = ((FormResponseSimple) event.getResponse()).getClickedButton().getText();
+            if (!event.wasClosed()) {
+                if(title == "World Teleport UI"){
+			
+		}
+	    }
+	}
     }
-   }
-  }
 }
