@@ -35,7 +35,7 @@ public class FormEvent implements Listener {
 			if(getPlugin().getServer().isLevelLoaded(level.getFolderName())){
 				player.teleport(level.getSafeSpawn());			
 			} else {
-				player.sendMessage(TextFormat.RED +"The world you are trying to teleport to is not loaded");
+				player.sendMessage(TextFormat.RED + "The world you are trying to teleport does not exist or isn't loaded");
 			}
 		}
 	    }
