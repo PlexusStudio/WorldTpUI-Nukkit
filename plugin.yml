@@ -1,6 +1,6 @@
 name: WorldTpUI
 main: Zero.WorldTpUI.Main
-version: 0.0.1
+version: 0.0.2
 api: [1.0.0]
 author: ZeroDevOfficial
 description: Allows Admins to tp between worlds with a simple UI in Nukkit

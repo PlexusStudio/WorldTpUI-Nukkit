@@ -2,7 +2,7 @@
 
 > Allows Admins to teleport between worlds with a simple UI in Nukkit
 
-> Version: v0.0.1
+> Version: v0.0.2
 
 > Minecraft: v1.2.x
 

@@ -3,28 +3,28 @@ package Zero.WorldTpUI;
 import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.utils.TextFormat;
 
-public class Main extends PluginBase{
-	
-  private static Main instance;
+public class Main extends PluginBase {
 
-  @Override
-  public void onEnable(){
-    instance = this;
-    getServer().getPluginManager().registerEvents(new Zero.WorldTpUI.events.FormEvent(this), this);
-    getServer().getCommandMap().register("wtpui", new Zero.WorldTpUI.commands.wtpui(this, "wtpui"));
-    info(TextFormat.GREEN +"Is now Enabled!");
-  }
+    private static Main instance;
 
-  @Override
-  public void onDisable(){
-    info(TextFormat.RED +"Goodbye!");
-  }
-  
-  public static Main getInstance(){
-    return instance;
-  }
+    public static Main getInstance() {
+        return instance;
+    }
 
-  public void info(String msg){
-    getLogger().info(msg);
-  }
+    @Override
+    public void onEnable() {
+        instance = this;
+        getServer().getPluginManager().registerEvents(new Zero.WorldTpUI.events.FormEvent(this), this);
+        getServer().getCommandMap().register("wtpui", new Zero.WorldTpUI.commands.wtpui(this, "wtpui"));
+        info( "v" +getDescription().getVersion() + TextFormat.GREEN + " Has Loaded");
+    }
+
+    @Override
+    public void onDisable() {
+        info(TextFormat.RED + "Goodbye!");
+    }
+
+    public void info(String msg) {
+        getServer().getLogger().info(TextFormat.DARK_GRAY + "[" + TextFormat.AQUA + getDescription().getName() + TextFormat.DARK_GRAY + "] " +  TextFormat.RESET + msg);
+    }
 }
