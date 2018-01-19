@@ -14,8 +14,8 @@ public class Main extends PluginBase {
     @Override
     public void onEnable() {
         instance = this;
-        getServer().getPluginManager().registerEvents(new Zero.WorldTpUI.events.FormEvent(this), this);
-        getServer().getCommandMap().register("wtpui", new Zero.WorldTpUI.commands.wtpui(this, "wtpui"));
+        getServer().getPluginManager().registerEvents(new Zero.WorldTpUI.events.FormEvent(), this);
+        getServer().getCommandMap().register("wtpui", new Zero.WorldTpUI.commands.wtpui("wtpui"));
         info("v" + getDescription().getVersion() + TextFormat.GREEN + " Has Loaded");
     }
 
