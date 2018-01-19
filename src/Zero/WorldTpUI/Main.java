@@ -16,7 +16,7 @@ public class Main extends PluginBase {
         instance = this;
         getServer().getPluginManager().registerEvents(new Zero.WorldTpUI.events.FormEvent(this), this);
         getServer().getCommandMap().register("wtpui", new Zero.WorldTpUI.commands.wtpui(this, "wtpui"));
-        info( "v" +getDescription().getVersion() + TextFormat.GREEN + " Has Loaded");
+        info("v" + getDescription().getVersion() + TextFormat.GREEN + " Has Loaded");
     }
 
     @Override
@@ -25,6 +25,6 @@ public class Main extends PluginBase {
     }
 
     public void info(String msg) {
-        getServer().getLogger().info(TextFormat.DARK_GRAY + "[" + TextFormat.AQUA + getDescription().getName() + TextFormat.DARK_GRAY + "] " +  TextFormat.RESET + msg);
+        getServer().getLogger().info(TextFormat.DARK_GRAY + "[" + TextFormat.AQUA + getDescription().getName() + TextFormat.DARK_GRAY + "] " + TextFormat.RESET + msg);
     }
 }

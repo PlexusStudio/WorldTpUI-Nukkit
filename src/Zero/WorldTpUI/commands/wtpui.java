@@ -13,15 +13,12 @@ import java.util.Map;
 
 public class wtpui extends VanillaCommand {
 
-    private Main plugin;
-
-    public wtpui(Main main, String name) {
+    public wtpui(String name) {
         super(name);
-        this.plugin = main;
     }
 
     public Main getPlugin() {
-        return plugin;
+        return Main.getInstance();
     }
 
     @Override

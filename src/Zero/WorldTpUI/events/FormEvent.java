@@ -12,14 +12,8 @@ import cn.nukkit.utils.TextFormat;
 
 public class FormEvent implements Listener {
 
-    private Main plugin;
-
-    public FormEvent(Main main) {
-        plugin = main;
-    }
-
     public Main getPlugin() {
-        return plugin;
+        return Main.getInstance();
     }
 
     @EventHandler
