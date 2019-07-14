@@ -27,10 +27,10 @@ public class PluginConfig {
     private void checkForLatestVersion() {
         if(this.config.exists("version")) {
             if(!this.getVersion().equals(this.plugin.getDescription().getVersion())) {
-                this.plugin.info( TextFormat.YELLOW + "It seems your on an older version, Updating Config..." );
+                this.plugin.info(TextFormat.YELLOW + "It seems your on an older version, Updating Config...");
                 this.updateVersion();
-                this.config.save( this.file );
-                this.plugin.info( TextFormat.GREEN + "Updated Config!" );
+                this.config.save(this.file);
+                this.plugin.info(TextFormat.GREEN + "Updated Config!");
             }
         } else {
             this.setDefaults();
