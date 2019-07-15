@@ -4,7 +4,6 @@ import WorldTeleportGui.Main;
 import cn.nukkit.Player;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.command.PluginCommand;
-import cn.nukkit.utils.TextFormat;
 
 public class WtpuiCommand extends PluginCommand<Main> {
 
@@ -19,12 +18,12 @@ public class WtpuiCommand extends PluginCommand<Main> {
                 if (sender.isOp())
                     this.getPlugin().showForm((Player) sender);
                 else
-                    sender.sendMessage(TextFormat.RED + "You have to be op to use this command!");
+                    sender.sendMessage(this.getPlugin().getLocaleManager().translate("plugin-command-nopermission"));
             } else {
                 this.getPlugin().showForm((Player) sender);
             }
         } else {
-            sender.sendMessage(TextFormat.RED + "You can only use this in-game!");
+            sender.sendMessage(this.getPlugin().getLocaleManager().translate("plugin-command-sender-equals-console"));
         }
         return true;
     }

@@ -1,4 +1,4 @@
-package WorldTeleportGui.events;
+package WorldTeleportGui.event;
 
 import WorldTeleportGui.Main;
 import cn.nukkit.Player;
@@ -38,7 +38,7 @@ public class GuiEvent implements Listener {
 
             if (!event.wasClosed()) {
                 if (title.equals("World Teleport GUI")) {
-                    if (button.equals("Load All Worlds.")) {
+                    if (button.equals(this.plugin.getLocaleManager().translate("plugin-formwindow-button-load"))) {
                         final File worlds = new File(this.plugin.getServer().getDataPath() + "/worlds");
 
                         if (worlds.exists()) {
@@ -55,7 +55,7 @@ public class GuiEvent implements Listener {
                         if (this.plugin.getServer().isLevelLoaded(level.getFolderName()))
                             player.teleport(level.getSafeSpawn());
                         else
-                            player.sendMessage(TextFormat.RED + "The world you are trying to teleport does not exist or isn't loaded");
+                            player.sendMessage(this.plugin.getLocaleManager().translate("plugin-level-does-not-exist"));
                     }
                 }
             }
