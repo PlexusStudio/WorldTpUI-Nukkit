@@ -14,7 +14,7 @@ I am back! I will be updating this plugin and will start making new plugins for 
 
 > Version: v0.0.3
 
-> Minecraft: v1.11.3
+> Minecraft: v1.12.0
 
 # Download
 download the latest jar file [here](https://github.com/AetherNetwork/WorldTpUI-Nukkit/releases) and drop it in your plugins folder
@@ -25,6 +25,7 @@ Drop the jar in your plugins folder.
 Edit Config:
 ```
 version: 0.0.3
+language: eng
 adminsOnly: true
 loadWorldWithGui: true
 useItemToOpenGUI: true
