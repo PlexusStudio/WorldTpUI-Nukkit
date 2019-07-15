@@ -25,6 +25,7 @@ Drop the jar in your plugins folder.
 Edit Config:
 ```
 version: 0.0.3
+language: eng
 adminsOnly: true
 loadWorldWithGui: true
 useItemToOpenGUI: true
